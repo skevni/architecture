@@ -1,17 +1,17 @@
 package ru.gb.sklyarov.lesson3.singleton;
 
-public class SessionSingleton {
-    private static volatile SessionSingleton instance;
+public class ConnectionSingleton {
+    private static volatile ConnectionSingleton instance;
     private final static Object monitor = new Object();
 
-    private SessionSingleton() {
+    private ConnectionSingleton() {
     }
 
-    public static SessionSingleton getInstance() {
+    public static ConnectionSingleton getInstance() {
         if (instance == null){
             synchronized (monitor){
                 if (instance == null) {
-                    instance = new SessionSingleton();
+                    instance = new ConnectionSingleton();
                 }
             }
         }
