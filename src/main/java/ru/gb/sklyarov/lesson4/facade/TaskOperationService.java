@@ -33,7 +33,4 @@ public class TaskOperationService {
         return true;
     }
 
-    public Task getTask() {
-        return task;
-    }
 }

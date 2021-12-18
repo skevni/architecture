@@ -1,22 +1,16 @@
 package ru.gb.sklyarov.lesson4.composite;
 
-public class ArchivingTask implements ArchivableTask{
-    private String name;
+import ru.gb.sklyarov.lesson3.model.Task;
 
-    public ArchivingTask(String name) {
-        this.name = name;
+public class ArchivingTask implements ArchivableTask{
+    private final Task task;
+
+    public ArchivingTask(Task task) {
+        this.task = task;
     }
 
     @Override
     public void archive() {
-        System.out.println( this.name + " is transferred to an archived state");
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        System.out.println( this.task.getTaskName() + " is transferred to an archived state");
     }
 }

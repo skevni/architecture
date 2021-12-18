@@ -1,5 +1,6 @@
 package ru.gb.sklyarov.lesson4.composite;
 
+import ru.gb.sklyarov.lesson3.TaskBuilder;
 import ru.gb.sklyarov.lesson3.model.Task;
 
 public class MainApp {
@@ -10,12 +11,12 @@ public class MainApp {
      */
     public static void main(String[] args) {
 
-        ArchivableTask task1 = new ArchivingTask("Task#1");
+        ArchivableTask task1 = new ArchivingTask(new TaskBuilder().id(1L).name("Task#1").build());
         task1.archive();
 
-        ArchivableTask tasks = new ArchivingTasks().add(new ArchivingTask("Task#2"),
-                new ArchivingTask("Task#3"),
-                new ArchivingTask("Task#4"));
+        ArchivableTask tasks = new ArchivingTasks().add(new ArchivingTask(new TaskBuilder().id(2L).name("Task#2").build()),
+                new ArchivingTask(new TaskBuilder().id(3L).name("Task#3").build()),
+                new ArchivingTask(new TaskBuilder().id(4L).name("Task#4").build()));
 
         tasks.archive();
     }
