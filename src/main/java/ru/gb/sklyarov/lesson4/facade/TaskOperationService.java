@@ -2,10 +2,10 @@ package ru.gb.sklyarov.lesson4.facade;
 
 import ru.gb.sklyarov.lesson3.model.Task;
 
-public class TaskOperation {
+public class TaskOperationService {
     private final Task task;
 
-    public TaskOperation(Task task) {
+    public TaskOperationService(Task task) {
         this.task = task;
     }
 
